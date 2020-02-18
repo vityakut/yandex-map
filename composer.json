@@ -16,8 +16,8 @@
             "homepage": "http://phpnt.com"
         },{
             "name": "vityakut",
-            "email": "vityakut@gmail.com",
-        },
+            "email": "vityakut@gmail.com"
+        }
     ],
     "require": {
         "php": ">=5.4.0",
