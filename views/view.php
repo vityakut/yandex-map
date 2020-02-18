@@ -5,6 +5,6 @@
  * Date: 14.06.2016
  * Time: 22:42
  */
-/* @var $widget phpnt\yandexMap\YandexMaps */
+/* @var $widget vityakut\yandexMap\YandexMaps */
 ?>
 <div id="<?= $widget->id ?>" style="width: <?= $widget->windowWidth ?>; height: <?= $widget->windowHeight ?>;"></div>
