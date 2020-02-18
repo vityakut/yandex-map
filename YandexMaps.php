@@ -65,21 +65,22 @@ class YandexMaps extends Widget
 
         YandexMapsAsset::register($view);
 // TODO: replace options by init
+        $myMap = "window.myMap_".$this->id;
         $js = <<< JS
-        ymaps.ready(init);
-            var myMap, myRoute, myPlacemark;
+        ymaps.ready(init$this->id);
+            var myRoute, myPlacemark;
         
-            function init(){
-                myMap = new ymaps.Map("$this->id", {$this->mapOptions}, {$this->additionalOptions});
+            function init$this->id(){
+                $myMap = new ymaps.Map("$this->id", {$this->mapOptions}, {$this->additionalOptions});
                 
                 var disableScroll = $this->disableScroll;
                 if ($this->disableScroll) {
-                    myMap.behaviors.disable('scrollZoom');                    
+                    $myMap.behaviors.disable('scrollZoom');                    
                 }
 
                 var myPlacemarks = $myPlacemarks;        
         
-                if (myPlacemarks){
+                if (myPlacemarks.length){
                     for (var i = 0; i < $countPlaces; i++) {
                         myPlacemark = new ymaps.Placemark([myPlacemarks[i]['latitude'], myPlacemarks[i]['longitude']],
                             myPlacemarks[i]['options'][0],
@@ -90,11 +91,11 @@ class YandexMaps extends Widget
                             myPlacemarks[i]['options'][5]
                         );
                     
-                        myMap.geoObjects.add(myPlacemark);
+                        $myMap.geoObjects.add(myPlacemark);
                     }
                 }
                 var myRoute = $myRoute;
-                if (myRoute){
+                if (myRoute.length){
                     ymaps.route(myRoute)
                         .done(function (route) {
                             route.options.set("mapStateAutoApply", true);
@@ -109,9 +110,9 @@ class YandexMaps extends Widget
                             route.getViaPoints().options.set({
                                 'iconColor' : '#FFB801',
                                 'preset': 'islands#yellowCircleDotIcon'
-                                
+                               
                             });
-                            myMap.geoObjects.add(route);
+                            $myMap.geoObjects.add(route);
                         }, function (err) {
                             throw err;
                         }, this);
@@ -119,13 +120,13 @@ class YandexMaps extends Widget
                 
                 var location = ymaps.geolocation.get();
                 location.then(
-                 function(result) {
-                  myMap.geoObjects.add(result.geoObjects)
-                  });
-                if (myMap.geoObjects.getBounds()){
-                    myMap.setBounds(myMap.geoObjects.getBounds(), {checkZoomRange:true});
-                    myMap.setZoom(myMap.getZoom()-0.4);
-                }
+                    function(result) {
+                    $myMap.geoObjects.add(result.geoObjects)
+                });
+//                if ($myMap.geoObjects.getBounds()){
+//                    $myMap.setBounds($myMap.geoObjects.getBounds(), {checkZoomRange:true});
+                    // $myMap.setZoom($myMap.getZoom()-0.4);
+                // }
             }
 JS;
         $view->registerJs($js);
