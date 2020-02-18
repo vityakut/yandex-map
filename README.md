@@ -1,19 +1,12 @@
-phpNT - Yandex Map Widget
+vityakut - Yandex Map Widget
 ================================
 [![Latest Stable Version](https://poser.pugx.org/phpnt/yandex-map/v/stable)](https://packagist.org/packages/phpnt/yandex-map) [![Total Downloads](https://poser.pugx.org/phpnt/yandex-map/downloads)](https://packagist.org/packages/phpnt/yandex-map) [![Latest Unstable Version](https://poser.pugx.org/phpnt/yandex-map/v/unstable)](https://packagist.org/packages/phpnt/yandex-map) [![License](https://poser.pugx.org/phpnt/yii2-chartjs/license)](https://packagist.org/packages/phpnt/yandex-map)
 
 ### Описание:
+forked from [phpnt/yandex-map](https://github.com/phpnt/yandex-map)
+
 ### Отображает карту города с метками адресов.
 ### [DEMO](http://phpnt.com/widget/yandex-map)
-
-------------
-### - [Поддержать phpNT](http://phpnt.com/donate/index) 
-------------
-
-### Социальные сети:
- - [Канал YouTube](https://www.youtube.com/c/phpnt)
- - [Группа VK](https://vk.com/phpnt)
- - [Группа facebook](https://www.facebook.com/Phpnt-595851240515413/)
 
 ------------
 
@@ -150,7 +143,7 @@ echo YandexMaps::widget([
 ## [Яндекс карты API](https://tech.yandex.ru/maps/)
 ------------
 ### Версия:
-### 0.0.1
+### 0.0.4
 ------------
 ### Лицензия:
 ### [MIT](https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_MIT)
