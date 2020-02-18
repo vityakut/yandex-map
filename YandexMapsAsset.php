@@ -6,7 +6,7 @@
  * Time: 22:24
  */
 
-namespace phpnt\yandexMap;
+namespace vityakut\yandexMap;
 
 use yii\web\AssetBundle;
 
