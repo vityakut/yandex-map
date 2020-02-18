@@ -6,7 +6,7 @@
  * Time: 8:00
  */
 
-namespace phpnt\yandexMap;
+namespace vityakut\yandexMap;
 
 use yii\base\Widget;
 use yii\helpers\ArrayHelper;
